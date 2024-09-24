@@ -289,8 +289,13 @@ public class Logic {
 				System.out.println("Your Broke!");
 				System.exit(0);
 			}
-			System.out.println("Type 1 to keep playing, or type anyting else to cash out");
-			a = s.nextInt();
+			System.out.println("Type 1 to keep playing, or type anything else to cash out");
+			try {
+				a = s.nextInt();
+			} catch (Exception e) {
+				a = 0;
+				s.reset();
+			}
 			if(a != 1) return money;
 		}
 		System.out.println("The shoe needs to be shuffled");
